@@ -1,0 +1,106 @@
+version: 2
+preset:
+  image: 'gantry-admin://images/layouts/3-col.png'
+  name: _joomla_-_gantry4
+  timestamp: 1701870135
+layout:
+  /drawer/: {  }
+  top: {  }
+  navigation: {  }
+  /showcase/: {  }
+  /feature/: {  }
+  /utility/: {  }
+  /breadcrumb/: {  }
+  /maintop/: {  }
+  /container-main/:
+    -
+      -
+        'main-mainbody 80': {  }
+      -
+        'sidebar 20': {  }
+  /mainbottom/: {  }
+  /extension/: {  }
+  /bottom/: {  }
+  footer: {  }
+  copyright: {  }
+  offcanvas: {  }
+structure:
+  drawer:
+    type: section
+    attributes:
+      boxed: ''
+  top:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  navigation:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  showcase:
+    type: section
+    attributes:
+      boxed: ''
+  feature:
+    type: section
+    attributes:
+      boxed: ''
+  utility:
+    type: section
+    attributes:
+      boxed: ''
+  breadcrumb:
+    type: section
+    attributes:
+      boxed: ''
+  maintop:
+    type: section
+    attributes:
+      boxed: ''
+  main-mainbody:
+    title: Mainbody
+  sidebar:
+    type: section
+    subtype: aside
+    block:
+      fixed: 1
+  container-main:
+    attributes:
+      boxed: ''
+  mainbottom:
+    type: section
+    attributes:
+      boxed: ''
+  extension:
+    type: section
+    attributes:
+      boxed: ''
+  bottom:
+    type: section
+    attributes:
+      boxed: ''
+  footer:
+    inherit:
+      outline: default
+      include:
+        - children
+        - attributes
+  copyright:
+    type: section
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children
+  offcanvas:
+    inherit:
+      outline: default
+      include:
+        - attributes
+        - children

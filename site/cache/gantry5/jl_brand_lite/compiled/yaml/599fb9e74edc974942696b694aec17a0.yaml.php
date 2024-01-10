@@ -1,0 +1,88 @@
+<?php
+return [
+    '@class' => 'Gantry\\Component\\File\\CompiledYamlFile',
+    'filename' => '/home/vol4_1/infinityfree.com/if0_35516079/htdocs/site/templates/jl_brand_lite/custom/config/_error/index.yaml',
+    'modified' => 1701870212,
+    'data' => [
+        'name' => '_error',
+        'timestamp' => 1701870212,
+        'version' => 7,
+        'preset' => [
+            'image' => 'gantry-admin://images/layouts/default.png',
+            'name' => '_error',
+            'timestamp' => 1701870210
+        ],
+        'positions' => [
+            'top-a' => 'Top A',
+            'breadcrumbs' => 'Hero'
+        ],
+        'sections' => [
+            'top' => 'Top',
+            'navigation' => 'Navigation',
+            'hero' => 'Hero',
+            'slideshow' => 'Slideshow',
+            'above' => 'Above',
+            'feature' => 'Feature',
+            'showcase' => 'Showcase',
+            'utility' => 'Utility',
+            'expanded' => 'Expanded',
+            'extension' => 'Extension',
+            'bottom' => 'Bottom',
+            'below' => 'Below',
+            'copyright' => 'Copyright',
+            'header' => 'Header',
+            'sidebar' => 'Sidebar',
+            'aside' => 'Aside',
+            'mainbar' => 'Main',
+            'footer' => 'Footer',
+            'offcanvas' => 'Offcanvas'
+        ],
+        'particles' => [
+            'jlimage' => [
+                'jlimage-8067' => 'JL Image'
+            ],
+            'content' => [
+                'system-content-2965' => 'Page Content'
+            ],
+            'jlheading' => [
+                'jlheading-2350' => 'JL Heading'
+            ],
+            'position' => [
+                'position-position-6368' => 'Top A',
+                'position-position-5344' => 'Hero'
+            ],
+            'jlnavbar' => [
+                'jlnavbar-6621' => 'JL Navbar'
+            ],
+            'jlfooterinfo' => [
+                'jlfooterinfo-1422' => 'JL Footer Info'
+            ],
+            'jldivider' => [
+                'jldivider-8902' => 'JL Divider'
+            ],
+            'copyright' => [
+                'copyright-2694' => 'Copyright'
+            ],
+            'branding' => [
+                'branding-6717' => 'Branding'
+            ]
+        ],
+        'inherit' => [
+            'default' => [
+                'top' => 'top',
+                'navigation' => 'navigation',
+                'hero' => 'hero',
+                'footer' => 'footer',
+                'copyright' => 'copyright',
+                'offcanvas' => 'offcanvas',
+                'position-position-6368' => 'position-position-4929',
+                'jlnavbar-6621' => 'jlnavbar-3762',
+                'position-position-5344' => 'position-position-6544',
+                'jlfooterinfo-1422' => 'jlfooterinfo-2765',
+                'jldivider-8902' => 'jldivider-1258',
+                'copyright-2694' => 'copyright-7994',
+                'branding-6717' => 'branding-4799'
+            ]
+        ]
+    ]
+];

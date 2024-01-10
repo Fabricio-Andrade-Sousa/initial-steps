@@ -1,0 +1,9 @@
+brand-theme:
+  title: 'Brand Theme'
+  description: 'Sample menu for the theme.'
+
+  items:
+    brand:
+      title: 'Home'
+      outline: home
+      home: 1

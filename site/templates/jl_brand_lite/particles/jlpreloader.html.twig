@@ -1,0 +1,72 @@
+{% extends '@nucleus/partials/particle.html.twig' %}
+
+
+{% set inline_css %}
+{% if (particle.preloader_type is empty) %}
+{{ particle.element ? particle.element : '#g-page-surround'}} {display:none;}
+{% else %}
+.preloader-wrapper {height: 100%;width: 100%;background-color: {{particle.background|default('#2d4059')|e}};color: {{particle.color|default('#ffffff')|e}};position: fixed;top: 0;left: 0;z-index: 999;}.preloader-wrapper .preloader {position: absolute;top: 50%;left: 50%;font-size: 20px;transform: translate(-50%, -50%)}
+{% endif %}
+{% endset %}
+{% do gantry.document.addInlineStyle(inline_css, 0) %}
+
+{% if (particle.preloader_type is not empty) %}
+{% set image_width = particle.image_width ? ' width="' ~ particle.image_width ~ '"' %}
+{% set image_height = particle.image_height ? ' height="' ~ particle.image_height ~ '"' %}
+
+{% pageblock body_top %}
+<div class="preloader-wrapper">
+  <div class="preloader">
+    {% if particle.image %}
+    <img{{ image_width|raw }}{{ image_height|raw }} class="tm-image" data-src="{{ url(particle.image)|e }}" jl-img>
+    {% else %}
+    <div jl-spinner="ratio: 2"></div>
+    {% endif %}
+  </div>
+</div>
+{% endpageblock %}
+{% endif %}
+
+{% block javascript_footer %}
+{% do gantry.load('jquery') %}
+{% if (particle.preloader_type is empty) %}
+    <script src="{{ url('gantry-theme://js/topbar.min.js') }}"></script>
+{% endif %}
+<script type="text/javascript">
+{% if (particle.preloader_type is empty) %}
+(function($) {
+    function resetToDefaults() {
+      topbar.config({
+        autoRun      : true,
+        barThickness : {{ particle.bar_thickness|default('3') }},
+        barColors    : {
+          {% if particle.barColor0 %}'0' : '{{ particle.barColor0|e }}',{% endif %}
+          {% if particle.barColor25 %}'.25' : '{{ particle.barColor25|e }}',{% endif %}
+          {% if particle.barColor50 %}'.50' : '{{ particle.barColor50|e }}',{% endif %}
+          {% if particle.barColor75 %}'.75' : '{{ particle.barColor75|e }}',{% endif %}
+          {% if particle.barColor100 %}'1.0' : '{{ particle.barColor100|e }}'{% endif %}
+        },
+        shadowBlur   : {{ particle.shadowBlur|default('10') }},
+        shadowColor  : '{{ particle.shadowColor|default('rgba(186, 0, 6, 0.6)') }}',
+        className    : 'topbar'
+      })
+    }
+    // Page load
+    resetToDefaults()
+    topbar.show()
+    setTimeout(function() {
+      $('{{ particle.element ? particle.element : '#g-page-surround'}}').fadeIn('slow')
+      topbar.hide()
+    }, 1500)
+})(jQuery);
+{% else %}
+(function($) {
+	$(window).on('load', function(e) {
+		$('.preloader-wrapper').fadeOut({{ particle.fadeout ? particle.fadeout|e : '"slow"' }}, function()  {
+			$(this).remove();
+		});
+	});
+})(jQuery);
+{% endif %}
+</script>
+{% endblock %}
